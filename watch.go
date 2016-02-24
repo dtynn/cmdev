@@ -136,6 +136,7 @@ func walkDir(dir string, paths *[]string, task *watchTask) {
 
 		if !fileInfo.IsDir() && task.shouldWatch(fileInfo.Name()) {
 			*paths = append(*paths, dir)
+			useDir = true
 		}
 	}
 
